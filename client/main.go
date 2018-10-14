@@ -1,17 +1,36 @@
 package main
 
 import (
+	"context"
+	"flag"
 	"fmt"
 	"log"
 
-	"github.com/kautsarady/golang-grpc/bulubulu"
+	pb "github.com/kautsarady/golang-grpc/server/api"
+	"google.golang.org/grpc"
 )
 
 func main() {
-	text := "sometimes i wonder why the sky is full of star"
-	res, err := bulubulu.Translate(text)
-	if err != nil {
-		log.Fatalf("Error translating '%s': %v", text, err)
+	server := flag.String("b", "localhost:8080", "Server address")
+	text := flag.String("t", "", "Text to translate")
+	flag.Parse()
+
+	if *text == "" {
+		log.Println("Text not specified, sending empty string to translate; use -t ... flag instead")
 	}
-	fmt.Println(res)
+
+	conn, err := grpc.Dial(*server, grpc.WithInsecure())
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer conn.Close()
+	client := pb.NewTranslatorClient(conn)
+
+	txt := &pb.Text{Text: *text}
+	res, err := client.Translate(context.Background(), txt)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(res.Text)
 }
