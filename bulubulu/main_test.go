@@ -1,8 +1,10 @@
-package bulubulu
+package bulubulu_test
 
 import (
 	"errors"
 	"testing"
+
+	"github.com/kautsarady/golang-grpc/bulubulu"
 )
 
 func TestTranslate(t *testing.T) {
@@ -22,7 +24,7 @@ func TestTranslate(t *testing.T) {
 	}
 	for _, tc := range tt {
 		t.Run(tc.name, func(t *testing.T) {
-			if res, _ := Translate(tc.in); res != tc.want {
+			if res, _ := bulubulu.Translate(tc.in); res != tc.want {
 				t.Errorf("Expected: %s; Got: %s", tc.want, res)
 			}
 		})

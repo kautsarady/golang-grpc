@@ -6,6 +6,7 @@ import (
 )
 
 //Translate translate bulubulu language to human language
+//replacing all vowel with u , b to l , and l to b
 func Translate(txt string) (string, error) {
 	if len(txt) == 0 {
 		return "", errors.New("Can't convert empty text")
