@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"log"
 
-	pb "github.com/kautsarady/golang-grpc/server/api"
+	pb "github.com/kautsarady/golang-grpc/api"
 	"google.golang.org/grpc"
 )
 
