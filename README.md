@@ -4,6 +4,11 @@ My Golang gRPC boilerplate
 ## service test case
 Bulubulu Planet is the most remote planet in the universe (relative to earth), scientist has found life thriving on it surface. Surprisingly bulubulueans understand our language, but they only use letter "u" as vowel and the way they write "b" and "l" is swapped one another. Help scientist to communicate with them by translating our writings so bulubulueans can understand.
 
+## install dependency
+```sh
+~$ glide install
+```
+
 ## start server
 ```sh
 ~/server$ go build .
