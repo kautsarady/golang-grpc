@@ -7,7 +7,7 @@ import (
 	"net"
 
 	pb "github.com/kautsarady/golang-grpc/api"
-	service "github.com/kautsarady/golang-grpc/service"
+	"github.com/kautsarady/golang-grpc/service"
 	"google.golang.org/grpc"
 )
 
