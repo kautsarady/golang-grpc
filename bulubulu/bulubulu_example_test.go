@@ -1,15 +1,13 @@
-package bulubulu_test
+package bulubulu
 
 import (
 	"fmt"
 	"log"
-
-	"github.com/kautsarady/golang-grpc/bulubulu"
 )
 
 func ExampleTranslate() {
 	text := "once upon of a time live a king without an heir"
-	s, err := bulubulu.Translate(text)
+	s, err := Translate(text)
 	if err != nil {
 		log.Fatalf("Error translating '%s': %v", text, err)
 	}
