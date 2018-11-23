@@ -18,7 +18,7 @@ Option flag: `-p {int PORT}` (default `8080`)
 
 ## start client
 ```sh
-client$ go build .
-client$ ./client -t "This is human speaking"
+/client$ go build .
+/client$ ./client -t "This is human speaking"
 ```
 Option flag: `-b {string HOST}` (default `localhost:8080`), `-t {string TEXTTOTRANSLATE}` (default `""`)
