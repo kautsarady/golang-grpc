@@ -5,10 +5,11 @@ import (
 	"testing"
 
 	pb "github.com/kautsarady/golang-grpc/api"
+	"github.com/kautsarady/golang-grpc/service"
 )
 
 func TestTranslateService(t *testing.T) {
-	s := server.Service{}
+	s := service.Service{}
 	req := &pb.Text{Text: "testing bulubulu"}
 
 	resp, err := s.Translate(context.Background(), req)
