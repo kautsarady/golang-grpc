@@ -6,7 +6,7 @@ Bulubulu Planet is the most remote planet in the universe (relative to earth), s
 
 ## install dependency
 ```sh
-~$ dep ensure
+$ dep ensure
 ```
 
 ## start server
