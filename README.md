@@ -21,4 +21,4 @@ Option flag: `-p {int PORT}` (default `8080`)
 /client$ go build .
 /client$ ./client -t "This is human speaking"
 ```
-Option flag: `-b {string HOST}` (default `localhost:8080`), `-t {string TEXTTOTRANSLATE}` (default `""`)
+Option flag: `-b = backend host:port` (default `localhost:8080`), `-t = text to translate` (default `""`)
